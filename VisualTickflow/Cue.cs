@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace VisualTickflow
 {
     // hoo boy messy code time
     public class Cue
     {
-        private string cue { get; set; }
-        private List<string> parameters { get; set; }
-        private float beat { get; set; }
+        public string cue { get; set; }
+        public List<string> parameters { get; set; }
+        public float beat { get; set; }
         public Cue(string game, string cue, string[] parameters, float beat)
         {
             this.beat = beat;
@@ -19,9 +20,11 @@ namespace VisualTickflow
                     switch (cue)
                     {
                         case "ball":
-                            if (MiscStuff.CheckLen(parameters, 2))
+                            this.parameters.Add("hdasiu");
+                            Console.WriteLine(parameters.Length);
+                            if (!MiscStuff.CheckLen(parameters, 2))
                             {
-                                Console.WriteLine("Invalid Parameters!");
+                                Console.WriteLine("Is");
                                 break;
                             }
                             this.cue = "0x100";
