@@ -8,8 +8,9 @@ namespace VisualTickflow
     public class Cue
     {
         public string cue { get; set; }
-        public List<string> parameters { get; set; }
+        public List<string> parameters = new List<string>();
         public float beat { get; set; }
+        public string game { get; set; }
         public Cue(string game, string cue, string[] parameters, float beat)
         {
             this.beat = beat;
@@ -17,11 +18,10 @@ namespace VisualTickflow
             switch (game)
             {
                 case "spaceball":
+                    this.game = game;
                     switch (cue)
                     {
                         case "ball":
-                            this.parameters.Add("hdasiu");
-                            Console.WriteLine(parameters.Length);
                             if (!MiscStuff.CheckLen(parameters, 2))
                             {
                                 Console.WriteLine("Is");
