@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace VisualTickflow
+namespace VT
 {
     public static class MiscStuff
     {
