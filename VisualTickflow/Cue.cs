@@ -58,6 +58,9 @@ namespace VisualTickflow
                             break;
                     }
                     break;
+                default:
+                    Console.WriteLine("Invalid game!");
+                    break;
             }
         }
     }
