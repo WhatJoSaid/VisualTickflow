@@ -8,7 +8,7 @@ namespace VT
     public class Cue
     {
         public string cue { get; set; }
-        public List<string> parameters = new List<string>();
+        public List<string> parameters { get; set; }
         public float beat { get; set; }
         public Cue(string game, string cue, string[] parameters, float beat)
         {
@@ -20,6 +20,8 @@ namespace VT
                     switch (cue)
                     {
                         case "ball":
+                            this.parameters.Add("hdasiu");
+                            Console.WriteLine(parameters.Length);
                             if (!MiscStuff.CheckLen(parameters, 2))
                             {
                                 Console.WriteLine("You didn't enter the right amount of parameters!");

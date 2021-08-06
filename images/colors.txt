@@ -1,8 +1,0 @@
-Buttons:
-#2c2c2c - Unpressed button outline
-#595959 - Unpressed button fill
-#060606 - Unpressed button icon
-
-#0b0b0b - Pressed button outline
-#444444 - Pressed button fill
-Pure Black - Pressed button icon
