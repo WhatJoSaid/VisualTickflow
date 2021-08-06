@@ -1,7 +1,11 @@
 <<<<<<< HEAD:VT/MiscStuff.cs
+<<<<<<< HEAD:VT/MiscStuff.cs
 ﻿using System.Collections.Generic;
 
 namespace VT
+=======
+﻿namespace VisualTickflow
+>>>>>>> parent of 4abe773 (lotta work):VisualTickflow/MiscStuff.cs
 =======
 ﻿namespace VisualTickflow
 >>>>>>> parent of 4abe773 (lotta work):VisualTickflow/MiscStuff.cs
