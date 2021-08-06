@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace VisualTickflow
+namespace VT
 {
     // hoo boy messy code time
     public class Cue
@@ -10,7 +10,6 @@ namespace VisualTickflow
         public string cue { get; set; }
         public List<string> parameters = new List<string>();
         public float beat { get; set; }
-        public string game { get; set; }
         public Cue(string game, string cue, string[] parameters, float beat)
         {
             this.beat = beat;
@@ -18,13 +17,12 @@ namespace VisualTickflow
             switch (game)
             {
                 case "spaceball":
-                    this.game = game;
                     switch (cue)
                     {
                         case "ball":
                             if (!MiscStuff.CheckLen(parameters, 2))
                             {
-                                Console.WriteLine("Is");
+                                Console.WriteLine("You didn't enter the right amount of parameters!");
                                 break;
                             }
                             this.cue = "0x100";
@@ -57,6 +55,26 @@ namespace VisualTickflow
                             }
                             break;
                     }
+                    break;
+                case "global":
+                    switch (cue)
+                    {
+                        case "rest":
+                            if (!MiscStuff.CheckLen(parameters, 1))
+                            {
+                                Console.WriteLine("You didn't enter the right amount of parameters!");
+                                break;
+                            }
+                            this.cue = "rest";
+                            int thisbeat = Convert.ToInt32(beat) * 48;
+                            string isnonstop = "0x" + thisbeat.ToString("X");
+                            this.parameters.Add(isnonstop);
+                            break;
+                    }
+                    
+                    break;
+                default:
+                    Console.WriteLine("Invalid game!");
                     break;
             }
         }
